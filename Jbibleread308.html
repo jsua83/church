@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>역사 순으로 읽는 365일 말씀대행진 성경통독 308</title>
+    <!-- 웹 폰트 적용 (나눔고딕) -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 기본 설정 - 전체 글자 크기를 대폭 키웠습니다 (기본 20px) */
+        body {
+            font-family: 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+            font-size: 20px; 
+            line-height: 1.9; /* 글씨가 커진 만큼 줄간격도 여유롭게 */
+            color: #222222;
+            background-color: #f0f2f5; 
+            margin: 0;
+            padding: 20px 10px;
+        }
+        
+        /* 문서 전체를 감싸는 흰색 박스 */
+        .container {
+            max-width: 900px; /* 더 넓은 텍스트 영역 */
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        /* --- 1. 상단 타이틀 섹션 (반복 부분: 진한 네이비 배경으로 강조) --- */
+        .header-section {
+            text-align: center;
+            background-color: #1a365d;
+            color: #ffffff;
+            padding: 35px 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(26, 54, 93, 0.2);
+        }
+        .header-section h1 {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 0 15px 0;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 15px;
+        }
+        .header-section .sub-title {
+            font-size: 22px;
+            color: #90cdf4; /* 밝은 하늘색 */
+            font-weight: 700;
+            margin: 8px 0;
+        }
+
+        /* --- 공통 박스 디자인 (사도신경, 주기도문 - 반복 부분 강조) --- */
+        .confession-box {
+            background-color: #fef8ec; /* 따뜻한 배경 */
+            border: 2px solid #f6e0b5;
+            border-left: 8px solid #d69e2e;
+            padding: 20px 15px; /* 내부 여백 축소 */
+            margin: 25px 0; /* 외부 상하 여백 축소 */
+            border-radius: 10px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.9; /* 줄 간격 약간 축소 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .confession-title {
+            font-weight: 800;
+            color: #975a16;
+            margin-bottom: 10px; /* 제목 아래 여백 축소 */
+            font-size: 24px;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        
+        .lords-prayer-box {
+            background-color: #ebf8ff; /* 시원한 배경 */
+            border: 2px solid #bee3f8;
+            border-left: 8px solid #3182ce;
+        }
+        .lords-prayer-box .confession-title {
+            color: #2b6cb0;
+        }
+
+        /* --- 2. 찬송가 섹션 --- */
+        .hymn-section {
+            text-align: center;
+            margin: 50px 0;
+            background-color: #f7fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        .hymn-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .hymn-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* --- 3. 5가지 포인트 섹션 (개별 카드 형태 적용) --- */
+        .points-wrapper {
+            background-color: #f0fdf4; /* 아주 연한 녹색 배경 */
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin: 50px 0;
+            border: 1px solid #bbf7d0;
+        }
+        .points-main-title {
+            color: #166534;
+            font-size: 26px;
+            font-weight: 800;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed #86efac;
+            padding-bottom: 15px;
+        }
+        
+        /* 포인트 항목 각각을 하얀색 박스로 분리 */
+        .point-item {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            border-left: 6px solid #22c55e;
+            font-size: 20px;
+        }
+        .point-title {
+            display: block;
+            font-weight: 800;
+            color: #15803d;
+            font-size: 22px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0fdf4;
+        }
+
+        /* --- 도입 문구 --- */
+        .intro-text {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: #2b6cb0;
+            margin: 50px 0;
+            background-color: #ebf8ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* --- 4. 성경 본문 섹션 (글자를 가장 크게) --- */
+        .bible-section {
+            margin-top: 60px;
+        }
+        .bible-main-title {
+            color: #2c5282;
+            font-size: 28px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .chapter-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #c53030;
+            margin: 50px 0 20px 0;
+            background-color: #fff5f5;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 6px solid #c53030;
+        }
+        /* 본문 글자 크기 대폭 확대 */
+        .verse {
+            margin-bottom: 12px;
+            font-size: 22px; 
+            text-align: justify;
+        }
+        /* 구절 번호를 동그란 뱃지 형태로 예쁘게 디자인 */
+        .verse-num {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            font-weight: bold;
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .amen-text {
+            text-align: right;
+            font-weight: 800;
+            font-size: 24px;
+            color: #e53e3e;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed #e2e8f0;
+        }
+
+        /* --- 5. 마무리 및 푸터 (반복 부분 강조) --- */
+        .closing-words {
+            text-align: center;
+            margin: 60px 0 40px 0;
+            padding: 40px 30px;
+            background-color: #2d3748; /* 다크 그레이 배경 */
+            color: #f7fafc; /* 밝은 글씨 */
+            border-radius: 12px;
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 2.2;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .closing-highlight {
+            color: #ecc94b; /* 노란색 강조 */
+            font-size: 26px;
+            display: block;
+            margin-top: 15px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            color: #718096;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* 모바일 화면 맞춤 설정 */
+        @media (max-width: 600px) {
+            .container { padding: 20px 15px; }
+            .header-section h1 { font-size: 24px; }
+            .header-section .sub-title { font-size: 18px; }
+            .points-main-title { font-size: 22px; }
+            .point-title { font-size: 20px; }
+            .verse { font-size: 20px; } /* 모바일에서도 크게 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ============================================== -->
+    <!-- 1. 상단 타이틀 -->
+    <!-- ============================================== -->
+    <div class="header-section">
+        <h1>역사 순으로 읽는 365일 말씀대행진 성경통독 308</h1>
+        <p class="sub-title">찬송가 428장 내 영혼에 햇빛 비치니</p>
+        <p class="sub-title">요한복음 4~6장 참된 예배</p>
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- 2. 사도신경 -->
+    <!-- ============================================== -->
+    <div class="confession-box">
+        <div class="confession-title">사도신경</div>
+        나는 전능하신 아버지 하나님, 천지의 창조주를 믿습니다.<br>
+        나는 그의 유일하신 아들, 우리 주 예수 그리스도를 믿습니다.<br>
+        그는 성령으로 잉태되어 동정녀 마리아에게서 나시고,<br>
+        본디오 빌라도에게 고난을 받아 십자가에 못 박혀 죽으시고,<br>
+        장사된 지 사흘만에 죽은 자 가운데서 다시 살아나셨으며,<br>
+        하늘에 오르시어 전능하신 아버지 하나님 우편에 앉아 계시다가,<br>
+        거기로 부터 살아있는 자와 죽은 자를 심판하러 오십니다.<br>
+        나는 성령을 믿으며, 거룩한 공교회와 성도의 교제와<br>
+        죄를 용서 받는 것과 몸의 부활과 영생을 믿습니다. 아멘.
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- 3. 찬송가 이미지 -->
+    <!-- ============================================== -->
+    <div class="hymn-section">
+        <div class="hymn-title">찬송가 428장</div>
+        <!-- 구글 드라이브 보안 정책에 맞춰 외부 표시가 가능한 우회 주소로 변경했습니다. -->
+        <img src="https://lh3.googleusercontent.com/d/1lWBz7dGgVfsigRnTiEo8Uqt-8oMsc_2o" alt="찬송가 428장 악보" class="hymn-image">
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- 4. 오늘의 굿 뉴스 (5가지 포인트) -->
+    <!-- ============================================== -->
+    <div class="points-wrapper">
+        <h2 class="points-main-title">오늘의 굿 뉴스, 요한복음 4~6장<br>'참된 예배'의 다섯 가지 포인트를 먼저 말씀드리겠습니다</h2>
+        
+        <div class="point-item">
+            <span class="point-title">첫 번째 포인트 : 예수님께서 사마리아 여인과 나누신 대화의 주제는 '참된 예배'였습니다.</span>
+            예수님으로 인해 800여 년 만에 '사마리아의 회복'이 시작됩니다(요 4:3~42). 예수님께서 사마리아에 있는 수가라는 동네에서 한 여인에게 물을 달라 하심으로 대화를 시작하십니다. 유대 사람이 사마리아 성에 들어간 것도, 사마리아인에게 말을 건 것도, 당시에는 매우 이례적인 일이었습니다.<br><br>
+            예수님께서는 여인에게 영원히 목마르지 않는 물을 소개해 주십니다. 예수님께서 말씀하신 물은 세상의 물이 아니라 '하나님의 아들 예수님' 자신을 말씀하신 것이었는데, 여인은 예수님을 눈앞에서 보고도 그 말씀을 깨닫지 못했습니다. 그러자 예수님께서 여인에게 남편을 데려오라는 다소 당황스러운 말씀을 하십니다. 예수님께서 자신의 상황을 다 알고 계시자 여인은 놀라 예수님을 '선지자'라고 고백합니다.<br><br>
+            이어지는 대화의 주제는 놀랍게도 '예배'였습니다. 예수님께서 사마리아 여인에게 '참된 예배'를 가르쳐 주신 것입니다. 참된 예배란, 예수님의 이름을 믿는 자들이 어느 곳에서든지 하나님께 예배할 수 있다는 것입니다. 이것은 이미 구약성경 스바냐와 말라기를 통해 예고된 바 있습니다(습 2:11; 말 1:11). 예수님께서는 유대인의 왕으로 베들레헴에서 태어나셨지만, 모든 민족을 구원하실 하나님의 독생자이시며 참 메시아이셨습니다. 이 사실을 깨달은 사마리아 여인은 마을로 내려가 예수님이 메시아이심을 전파합니다. 이 여인의 전도로 사마리아에 복음이 전해지고 많은 이들이 예수님을 믿게 됩니다.<br><br>
+            사마리아 여인과의 대화를 마치신 예수님께서는 양식을 구해 돌아온 제자들에게 '참된 양식'에 대해 가르쳐 주십니다. 예수님께서 말씀하신 '나를 보내신 이의 뜻'은 바로 '영혼 구원'이었습니다. 이 일 후에 예수님께서는 갈릴리에서의 사역을 시작하십니다(요 4:43~45).
+        </div>
+
+        <div class="point-item">
+            <span class="point-title">두 번째 포인트 : 예수님께서는 베데스다 못 가의 한 환자에게 38년 만에 진정한 명절과 안식일을 맛보게 해주십니다.</span>
+            요한이 증언한 예수님의 일곱 가지 기적 중 세 번째 기적은 38년 된 병자를 고치신 이야기입니다(요 5:1~18). 예수님께서 명절에 예루살렘으로 가시던 중 베데스다라 하는 못에서, 38년 동안이나 병 고침을 소망하며 기다리던 한 병자를 만나셨습니다. 예수님께서는 그의 병을 낫게 하셔서 자신이 사용하던 자리를 들고 기쁨으로 걸어 나갈 수 있도록 해주셨습니다. 38년 된 병자에게 그 날은 최고의 명절이요, 최고의 안식일이었습니다.<br><br>
+            그런데 유대인들은 그 병자의 치유를 함께 기뻐하지 않았습니다. 안식일에 병 고침을 받았다는 이유에서였습니다. 유대인들은 '명절'과 '안식일'의 진정한 의미를 오해하고 있었습니다. 예수님께서는 그 후 성전에서 치유된 사람을 만나 새로운 삶을 살라고 당부하셨습니다. 또한 안식일에 일하신 예수님을 박해하는 유대인들에게 "내 아버지께서 이제까지 일하시니 나도 일한다"(요 5:17)고 말씀하셨습니다. 이에 산헤드린 공회원들은 예수님께서 안식일에 병자를 고치신 것과 하나님을 아버지로 부르신 것을 빌미로 예수님을 죽이기로 더욱 마음먹게 됩니다. 그러나 예수님께서는 그들의 의도를 다 아시면서도 당신이 '안식일의 주인'이심을 공표하십니다(마 12:5~8).
+        </div>
+
+        <div class="point-item">
+            <span class="point-title">세 번째 포인트 : 예수님께서는 구약성경이 예수님 자신에 대하여 증언하는 것이라고 말씀하십니다.</span>
+            예수님께서는 산헤드린 공회가 당신을 감시하며 죽이려 한다는 것을 아시면서도, 당신이 누구이신지 분명히 드러내십니다. 예수님께서는 하나님과 동등하신 하나님의 아들이심을 말씀하시며 당신의 권한에 대해 가르쳐 주십니다(요 5:19~29).<br><br>
+            첫째, 예수님과 하나님께서는 모든 것을 공유하십니다. 둘째, 예수님은 하나님과 함께 부활의 능력이 있으십니다. 셋째, 예수님은 하나님께서 주신 심판의 권한을 가지고 계십니다. 즉 예수님의 심판은 하나님의 뜻이며 의로운 심판이라는 말씀입니다(요 5:30). 그러므로 하나님과 동등하신 하나님의 아들 예수 그리스도의 말씀을 믿는 자는 영생을 얻게 됩니다.<br><br>
+            계속해서 예수님께서는 자신이 하나님의 아들이심을 믿게 하는 증언에 대해 말씀하십니다(요 5:35~40). 첫째, 예수님께서 행하시는 역사가 증언합니다. 둘째, 하나님께서 직접 증언하십니다. 셋째, 성경이 증언합니다. 예수님께서는 산헤드린 공회원들이 이 모든 증언을 알고 성경을 연구하면서도, 정작 예수님을 가리키는 증언은 믿지 않음을 책망하십니다.
+        </div>
+
+        <div class="point-item">
+            <span class="point-title">네 번째 포인트 : 사도 요한은 예수님의 자기 선언적 표현 일곱 가지를 소개합니다.</span>
+            요한복음에는 예수님이 어떤 분이신지 소개하는 자기 선언적 표현이 많이 등장합니다.<br><br>
+            첫째, "나는 생명의 떡이다"(요 6:35, 48). 둘째, "나는 세상의 빛이다"(요 8:12). 셋째, "나는 양의 문이다"(요 10:7, 9). 넷째, "나는 선한 목자이다"(요 10:11, 14). 다섯째, "나는 부활이요 생명이다"(요 11:25). 여섯째, "나는 길이요 진리요 생명이다"(요 14:6). 일곱째, "나는 참포도나무다"(요 15:1, 5).<br><br>
+            그 중 오늘 본문에서 예수님께서는 자신이 '생명의 떡'이심을 가르쳐 주십니다. 요한은 이 내용을 대화 형식으로 기록하고 있습니다(요 6:26~59). 예수님께서는 "나는 생명의 떡"이라고 선언하시며 예수님을 믿는 믿음으로 "영생을 얻으라"고 말씀하십니다. "내가 줄 떡은 곧 세상의 생명을 위한 내 살이니라"(요 6:51)는 예수님의 가르침은 십자가에서 겪으실 고난을 말씀하신 것으로, 이는 예수님의 성만찬으로 이어지게 됩니다.
+        </div>
+
+        <div class="point-item">
+            <span class="point-title">다섯 번째 포인트 : 예수님의 가르침을 받고 난 후 사람들의 반응은 두 가지로 극명하게 갈립니다.</span>
+            첫째, 예수님을 버리고 떠난 사람들이 있었습니다. 그들은 예수님의 가르침이 영생에 관한 것임을 듣고, 예수님께서 자신들이 기대했던 메시아가 아닌 줄 알고 떠난 것입니다. 둘째, 끝까지 예수님을 믿고 따르겠다는 사람들이 있었습니다. 끝까지 예수님과 함께하겠다는 제자들에게 예수님께서는 열두 제자 가운데 한 명은 마귀임을 말씀하십니다(요 6:66~71).
+        </div>
+    </div>
+
+    <!-- 도입 문구 -->
+    <div class="intro-text">
+        오늘은 요한복음 4~6장 '참된 예배'를 함께 살펴보았습니다.<br>
+        성경을 쉽고 재미있는 이야기로 함께 통독하겠습니다.
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- 5. 성경 본문 -->
+    <!-- ============================================== -->
+    <div class="bible-section">
+        <h2 class="bible-main-title">📖 성경 본문 읽기</h2>
+
+        <!-- 요한복음 4장 -->
+        <div class="chapter-title">요한복음 4장 (1~54절)</div>
+        <div class="verse"><span class="verse-num">1</span> 예수께서 제자를 삼고 세례를 베푸시는 것이 요한보다 많다 하는 말을 바리새인들이 들은 줄을 주께서 아신지라</div>
+        <div class="verse"><span class="verse-num">2</span> (예수께서 친히 세례를 베푸신 것이 아니요 제자들이 베푼 것이라)</div>
+        <div class="verse"><span class="verse-num">3</span> 유대를 떠나사 다시 갈릴리로 가실새</div>
+        <div class="verse"><span class="verse-num">4</span> 사마리아를 통과하여야 하겠는지라</div>
+        <div class="verse"><span class="verse-num">5</span> 사마리아에 있는 수가라 하는 동네에 이르시니 야곱이 그 아들 요셉에게 준 땅이 가깝고</div>
+        <div class="verse"><span class="verse-num">6</span> 거기 또 야곱의 우물이 있더라 예수께서 길 가시다가 피곤하여 우물 곁에 그대로 앉으시니 때가 여섯 시쯤 되었더라</div>
+        <div class="verse"><span class="verse-num">7</span> 사마리아 여자 한 사람이 물을 길으러 왔으매 예수께서 물을 좀 달라 하시니</div>
+        <div class="verse"><span class="verse-num">8</span> 이는 제자들이 먹을 것을 사러 그 동네에 들어갔음이러라</div>
+        <div class="verse"><span class="verse-num">9</span> 사마리아 여자가 이르되 당신은 유대인으로서 어찌하여 사마리아 여자인 나에게 물을 달라 하나이까 하니 이는 유대인이 사마리아인과 상종하지 아니함이러라</div>
+        <div class="verse"><span class="verse-num">10</span> 예수께서 대답하여 이르시되 네가 만일 하나님의 선물과 또 네게 물 좀 달라 하는 이가 누구인 줄 알았더라면 네가 그에게 구하였을 것이요 그가 생수를 네게 주었으리라</div>
+        <div class="verse"><span class="verse-num">11</span> 여자가 이르되 주여 물 길을 그릇도 없고 이 우물은 깊은데 어디서 당신이 그 생수를 얻겠사옵나이까</div>
+        <div class="verse"><span class="verse-num">12</span> 우리 조상 야곱이 이 우물을 우리에게 주셨고 또 여기서 자기와 자기 아들들과 짐승이 다 마셨는데 당신이 야곱보다 더 크니이까</div>
+        <div class="verse"><span class="verse-num">13</span> 예수께서 대답하여 이르시되 이 물을 마시는 자마다 다시 목마르려니와</div>
+        <div class="verse"><span class="verse-num">14</span> 내가 주는 물을 마시는 자는 영원히 목마르지 아니하리니 내가 주는 물은 그 속에서 영생하도록 솟아나는 샘물이 되리라</div>
+        <div class="verse"><span class="verse-num">15</span> 여자가 이르되 주여 그런 물을 내게 주사 목마르지도 않고 또 여기 물 길으러 오지도 않게 하옵소서</div>
+        <div class="verse"><span class="verse-num">16</span> 이르시되 가서 네 남편을 불러 오라</div>
+        <div class="verse"><span class="verse-num">17</span> 여자가 대답하여 이르되 나는 남편이 없나이다 예수께서 이르시되 네가 남편이 없다 하는 말이 옳도다</div>
+        <div class="verse"><span class="verse-num">18</span> 너에게 남편 다섯이 있었고 지금 있는 자도 네 남편이 아니니 네 말이 참되도다</div>
+        <div class="verse"><span class="verse-num">19</span> 여자가 이르되 주여 내가 보니 선지자로소이다</div>
+        <div class="verse"><span class="verse-num">20</span> 우리 조상들은 이 산에서 예배하였는데 당신들의 말은 예배할 곳이 예루살렘에 있다 하더이다</div>
+        <div class="verse"><span class="verse-num">21</span> 예수께서 이르시되 여자여 내 말을 믿으라 이 산에서도 말고 예루살렘에서도 말고 너희가 아버지께 예배할 때가 이르리라</div>
+        <div class="verse"><span class="verse-num">22</span> 너희는 알지 못하는 것을 예배하고 우리는 아는 것을 예배하노니 이는 구원이 유대인에게서 남이라</div>
+        <div class="verse"><span class="verse-num">23</span> 아버지께 참되게 예배하는 자들은 영과 진리로 예배할 때가 오나니 곧 이 때라 아버지께서는 자기에게 이렇게 예배하는 자들을 찾으시느니라</div>
+        <div class="verse"><span class="verse-num">24</span> 하나님은 영이시니 예배하는 자가 영과 진리로 예배할지니라</div>
+        <div class="verse"><span class="verse-num">25</span> 여자가 이르되 메시야 곧 그리스도라 하는 이가 오실 줄을 내가 아노니 그가 오시면 모든 것을 우리에게 알려 주시리이다</div>
+        <div class="verse"><span class="verse-num">26</span> 예수께서 이르시되 네게 말하는 내가 그라 하시니라</div>
+        <div class="verse"><span class="verse-num">27</span> 이 때에 제자들이 돌아와서 예수께서 여자와 말씀하시는 것을 이상히 여겼으나 무엇을 구하시나이까 어찌하여 그와 말씀하시나이까 묻는 자가 없더라</div>
+        <div class="verse"><span class="verse-num">28</span> 여자가 물동이를 버려 두고 동네로 들어가서 사람들에게 이르되</div>
+        <div class="verse"><span class="verse-num">29</span> 내가 행한 모든 일을 내게 말한 사람을 와서 보라 이는 그리스도가 아니냐 하니</div>
+        <div class="verse"><span class="verse-num">30</span> 그들이 동네에서 나와 예수께로 오더라</div>
+        <div class="verse"><span class="verse-num">31</span> 그 사이에 제자들이 청하여 이르되 랍비여 잡수소서</div>
+        <div class="verse"><span class="verse-num">32</span> 이르시되 내게는 너희가 알지 못하는 먹을 양식이 있느니라</div>
+        <div class="verse"><span class="verse-num">33</span> 제자들이 서로 말하되 누가 잡수실 것을 갖다 드렸는가 하니</div>
+        <div class="verse"><span class="verse-num">34</span> 예수께서 이르시되 나의 양식은 나를 보내신 이의 뜻을 행하며 그의 일을 온전히 이루는 이것이니라</div>
+        <div class="verse"><span class="verse-num">35</span> 너희는 넉 달이 지나야 추수할 때가 이르겠다 하지 아니하느냐 그러나 나는 너희에게 이르노니 너희 눈을 들어 밭을 보라 희어져 추수하게 되었도다</div>
+        <div class="verse"><span class="verse-num">36</span> 거두는 자가 이미 삯도 받고 영생에 이르는 열매를 모으나니 이는 뿌리는 자와 거두는 자가 함께 즐거워하게 하려 함이라</div>
+        <div class="verse"><span class="verse-num">37</span> 그런즉 한 사람이 심고 다른 사람이 거둔다 하는 말이 옳도다</div>
+        <div class="verse"><span class="verse-num">38</span> 내가 너희로 노력하지 아니한 것을 거두러 보내었노니 다른 사람들은 노력하였고 너희는 그들이 노력한 것에 참여하였느니라</div>
+        <div class="verse"><span class="verse-num">39</span> 여자의 말이 내가 행한 모든 것을 그가 내게 말하였다 증언하므로 그 동네 중에 많은 사마리아인이 예수를 믿는지라</div>
+        <div class="verse"><span class="verse-num">40</span> 사마리아인들이 예수께 와서 자기들과 함께 유하시기를 청하니 거기서 이틀을 유하시매</div>
+        <div class="verse"><span class="verse-num">41</span> 예수의 말씀으로 말미암아 믿는 자가 더욱 많아</div>
+        <div class="verse"><span class="verse-num">42</span> 그 여자에게 말하되 이제 우리가 믿는 것은 네 말로 인함이 아니니 이는 우리가 친히 듣고 그가 참으로 세상의 구주신 줄 앎이라 하였더라</div>
+        <div class="verse"><span class="verse-num">43</span> 이틀이 지나매 예수께서 거기를 떠나 갈릴리로 가시며</div>
+        <div class="verse"><span class="verse-num">44</span> 친히 증언하시기를 선지자가 고향에서는 높임을 받지 못한다 하시고</div>
+        <div class="verse"><span class="verse-num">45</span> 갈릴리에 이르시매 갈릴리인들이 그를 영접하니 이는 자기들도 명절에 갔다가 예수께서 명절중 예루살렘에서 하신 모든 일을 보았음이더라</div>
+        <div class="verse"><span class="verse-num">46</span> 예수께서 다시 갈릴리 가나에 이르시니 전에 물로 포도주를 만드신 곳이라 왕의 신하가 있어 그의 아들이 가버나움에서 병들었더니</div>
+        <div class="verse"><span class="verse-num">47</span> 그가 예수께서 유대로부터 갈릴리로 오셨다는 것을 듣고 가서 청하되 내려오셔서 내 아들의 병 고쳐 주소서 하니 그가 거의 죽게 되었음이라</div>
+        <div class="verse"><span class="verse-num">48</span> 예수께서 이르시되 너희는 표적과 기사를 보지 못하면 도무지 믿지 아니하리라</div>
+        <div class="verse"><span class="verse-num">49</span> 신하가 이르되 주여 내 아이가 죽기 전에 내려오소서</div>
+        <div class="verse"><span class="verse-num">50</span> 예수께서 이르시되 가라 네 아들이 살아 있다 하시니 그 사람이 예수께서 하신 말씀을 믿고 가더니</div>
+        <div class="verse"><span class="verse-num">51</span> 내려가는 길에서 그 종들이 오다가 만나서 아이가 살아 있다 하거늘</div>
+        <div class="verse"><span class="verse-num">52</span> 그 낫기 시작한 때를 물은즉 어제 일곱 시에 열기가 떨어졌나이다 하는지라</div>
+        <div class="verse"><span class="verse-num">53</span> 그의 아버지가 예수께서 네 아들이 살아 있다 말씀하신 그 때인 줄 알고 자기와 그 온 집안이 다 믿으니라</div>
+        <div class="verse"><span class="verse-num">54</span> 이것은 예수께서 유대에서 갈릴리로 오신 후에 행하신 두 번째 표적이니라</div>
+
+        <!-- 요한복음 5장 -->
+        <div class="chapter-title">요한복음 5장 (1~47절)</div>
+        <div class="verse"><span class="verse-num">1</span> 그 후에 유대인의 명절이 되어 예수께서 예루살렘에 올라가시니라</div>
+        <div class="verse"><span class="verse-num">2</span> 예루살렘에 있는 양문 곁에 히브리 말로 베데스다라 하는 못이 있는데 거기 행각 다섯이 있고</div>
+        <div class="verse"><span class="verse-num">3</span> 그 안에 많은 병자, 맹인, 다리 저는 사람, 혈기 마른 사람들이 누워 [물의 움직임을 기다리니</div>
+        <div class="verse"><span class="verse-num">4</span> 이는 천사가 가끔 못에 내려와 물을 움직이게 하는데 움직인 후에 먼저 들어가는 자는 어떤 병에 걸렸든지 낫게 됨이러라]</div>
+        <div class="verse"><span class="verse-num">5</span> 거기 서른여덟 해 된 병자가 있더라</div>
+        <div class="verse"><span class="verse-num">6</span> 예수께서 그 누운 것을 보시고 병이 벌써 오래된 줄 아시고 이르시되 네가 낫고자 하느냐</div>
+        <div class="verse"><span class="verse-num">7</span> 병자가 대답하되 주여 물이 움직일 때에 나를 못에 넣어 주는 사람이 없어 내가 가는 동안에 다른 사람이 먼저 내려가나이다</div>
+        <div class="verse"><span class="verse-num">8</span> 예수께서 이르시되 일어나 네 자리를 들고 걸어가라 하시니</div>
+        <div class="verse"><span class="verse-num">9</span> 그 사람이 곧 나아서 자리를 들고 걸어가니라 이 날은 안식일이니</div>
+        <div class="verse"><span class="verse-num">10</span> 유대인들이 병 나은 사람에게 이르되 안식일인데 네가 자리를 들고 가는 것이 옳지 아니하니라</div>
+        <div class="verse"><span class="verse-num">11</span> 대답하되 나를 낫게 한 그가 자리를 들고 걸어가라 하더라 하니</div>
+        <div class="verse"><span class="verse-num">12</span> 그들이 묻되 너에게 자리를 들고 걸어가라 한 사람이 누구냐 하되</div>
+        <div class="verse"><span class="verse-num">13</span> 고침을 받은 사람은 그가 누구인지 알지 못하니 이는 거기 사람이 많으므로 예수께서 이미 피하셨음이라</div>
+        <div class="verse"><span class="verse-num">14</span> 그 후에 예수께서 성전에서 그 사람을 만나 이르시되 보라 네가 나았으니 더 심한 것이 생기지 않게 다시는 죄를 범하지 말라 하시니</div>
+        <div class="verse"><span class="verse-num">15</span> 그 사람이 유대인들에게 가서 자기를 고친 이는 예수라 하니라</div>
+        <div class="verse"><span class="verse-num">16</span> 그러므로 안식일에 이러한 일을 행하신다 하여 유대인들이 예수를 박해하게 된지라</div>
+        <div class="verse"><span class="verse-num">17</span> 예수께서 그들에게 이르시되 내 아버지께서 이제까지 일하시니 나도 일한다 하시매</div>
+        <div class="verse"><span class="verse-num">18</span> 유대인들이 이로 말미암아 더욱 예수를 죽이고자 하니 이는 안식일을 범할 뿐만 아니라 하나님을 자기의 친 아버지라 하여 자기를 하나님과 동등으로 삼으심이러라</div>
+        <div class="verse"><span class="verse-num">19</span> 그러므로 예수께서 그들에게 이르시되 내가 진실로 진실로 너희에게 이르노니 아들이 아버지께서 하시는 일을 보지 않고는 아무 것도 스스로 할 수 없나니 아버지께서 행하시는 그것을 아들도 그와 같이 행하느니라</div>
+        <div class="verse"><span class="verse-num">20</span> 아버지께서 아들을 사랑하사 자기가 행하시는 것을 다 아들에게 보이시고 또 그보다 더 큰 일을 보이사 너희로 놀랍게 여기게 하시리라</div>
+        <div class="verse"><span class="verse-num">21</span> 아버지께서 죽은 자들을 일으켜 살리심 같이 아들도 자기가 원하는 자들을 살리느니라</div>
+        <div class="verse"><span class="verse-num">22</span> 아버지께서 아무도 심판하지 아니하시고 심판을 다 아들에게 맡기셨으니</div>
+        <div class="verse"><span class="verse-num">23</span> 이는 모든 사람으로 아버지를 공경하는 것 같이 아들을 공경하게 하려 하심이라 아들을 공경하지 아니하는 자는 그를 보내신 아버지도 공경하지 아니하느니라</div>
+        <div class="verse"><span class="verse-num">24</span> 내가 진실로 진실로 너희에게 이르노니 내 말을 듣고 또 나 보내신 이를 믿는 자는 영생을 얻었고 심판에 이르지 아니하나니 사망에서 생명으로 옮겼느니라</div>
+        <div class="verse"><span class="verse-num">25</span> 진실로 진실로 너희에게 이르노니 죽은 자들이 하나님의 아들의 음성을 들을 때가 오나니 곧 이 때라 듣는 자는 살아나리라</div>
+        <div class="verse"><span class="verse-num">26</span> 아버지께서 자기 속에 생명이 있음 같이 아들에게도 생명을 주어 그 속에 있게 하셨고</div>
+        <div class="verse"><span class="verse-num">27</span> 또 인자됨으로 말미암아 심판하는 권한을 주셨느니라</div>
+        <div class="verse"><span class="verse-num">28</span> 이를 놀랍게 여기지 말라 무덤 속에 있는 자가 다 그의 음성을 들을 때가 오나니</div>
+        <div class="verse"><span class="verse-num">29</span> 선한 일을 행한 자는 생명의 부활로, 악한 일을 행한 자는 심판의 부활로 나오리라</div>
+        <div class="verse"><span class="verse-num">30</span> 내가 아무 것도 스스로 할 수 없노라 듣는 대로 심판하노니 나는 나의 뜻대로 하려 하지 않고 나를 보내신 이의 뜻대로 하려 하므로 내 심판은 의로우니라</div>
+        <div class="verse"><span class="verse-num">31</span> 내가 만일 나를 위하여 증언하면 내 증언은 참되지 아니하되</div>
+        <div class="verse"><span class="verse-num">32</span> 나를 위하여 증언하시는 이가 따로 있으니 나를 위하여 증언하시는 그 증언이 참인 줄 아노라</div>
+        <div class="verse"><span class="verse-num">33</span> 너희가 요한에게 사람을 보내매 요한이 진리에 대하여 증언하였느니라</div>
+        <div class="verse"><span class="verse-num">34</span> 그러나 나는 사람에게서 증언을 취하지 아니하노라 다만 이 말을 하는 것은 너희로 구원을 받게 하려 함이니라</div>
+        <div class="verse"><span class="verse-num">35</span> 요한은 켜서 비추이는 등불이라 너희가 한때 그 빛에 즐거이 있기를 원하였거니와</div>
+        <div class="verse"><span class="verse-num">36</span> 내게는 요한의 증거보다 더 큰 증거가 있으니 아버지께서 내게 주사 이루게 하시는 역사 곧 내가 하는 그 역사가 아버지께서 나를 보내신 것을 나를 위하여 증언하는 것이요</div>
+        <div class="verse"><span class="verse-num">37</span> 또한 나를 보내신 아버지께서 친히 나를 위하여 증언하셨느니라 너희는 아무 때에도 그 음성을 듣지 못하였고 그 형상을 보지 못하였으며</div>
+        <div class="verse"><span class="verse-num">38</span> 그 말씀이 너희 속에 거하지 아니하니 이는 그가 보내신 이를 믿지 아니함이라</div>
+        <div class="verse"><span class="verse-num">39</span> 너희가 성경에서 영생을 얻는 줄 생각하고 성경을 연구하거니와 이 성경이 곧 내게 대하여 증언하는 것이니라</div>
+        <div class="verse"><span class="verse-num">40</span> 그러나 너희가 영생을 얻기 위하여 내게 오기를 원하지 아니하는도다</div>
+        <div class="verse"><span class="verse-num">41</span> 나는 사람에게서 영광을 취하지 아니하노라</div>
+        <div class="verse"><span class="verse-num">42</span> 다만 하나님을 사랑하는 것이 너희 속에 없음을 알았노라</div>
+        <div class="verse"><span class="verse-num">43</span> 나는 내 아버지의 이름으로 왔으매 너희가 영접하지 아니하나 만일 다른 사람이 자기 이름으로 오면 영접하리라</div>
+        <div class="verse"><span class="verse-num">44</span> 너희가 서로 영광을 취하고 유일하신 하나님께로부터 오는 영광은 구하지 아니하니 어찌 나를 믿을 수 있느냐</div>
+        <div class="verse"><span class="verse-num">45</span> 내가 너희를 아버지께 고발할까 생각하지 말라 너희를 고발하는 이가 있으니 곧 너희가 바라는 자 모세니라</div>
+        <div class="verse"><span class="verse-num">46</span> 모세를 믿었더라면 또 나를 믿었으리니 이는 그가 내게 대하여 기록하였음이라</div>
+        <div class="verse"><span class="verse-num">47</span> 그러나 그의 글도 믿지 아니하거든 어찌 내 말을 믿겠느냐 하시니라</div>
+
+        <!-- 요한복음 6장 -->
+        <div class="chapter-title">요한복음 6장 (1~71절)</div>
+        <div class="verse"><span class="verse-num">1</span> 그 후에 예수께서 디베랴의 갈릴리 바다 건너편으로 가시매</div>
+        <div class="verse"><span class="verse-num">2</span> 큰 무리가 따르니 이는 병자들에게 행하시는 표적을 보았음이러라</div>
+        <div class="verse"><span class="verse-num">3</span> 예수께서 산에 오르사 제자들과 함께 거기 앉으시니</div>
+        <div class="verse"><span class="verse-num">4</span> 마침 유대인의 명절인 유월절이 가까운지라</div>
+        <div class="verse"><span class="verse-num">5</span> 예수께서 눈을 들어 큰 무리가 자기에게로 오는 것을 보시고 빌립에게 이르시되 우리가 어디서 떡을 사서 이 사람들을 먹이겠느냐 하시니</div>
+        <div class="verse"><span class="verse-num">6</span> 이렇게 말씀하심은 친히 어떻게 하실지를 아시고 빌립을 시험하고자 하심이라</div>
+        <div class="verse"><span class="verse-num">7</span> 빌립이 대답하되 각 사람으로 조금씩 받게 할지라도 이백 데나리온의 떡이 부족하리이다</div>
+        <div class="verse"><span class="verse-num">8</span> 제자 중 하나 곧 시몬 베드로의 형제 안드레가 예수께 여짜오되</div>
+        <div class="verse"><span class="verse-num">9</span> 여기 한 아이가 있어 보리떡 다섯 개와 물고기 두 마리를 가지고 있나이다 그러나 그것이 이 많은 사람에게 얼마나 되겠사옵나이까</div>
+        <div class="verse"><span class="verse-num">10</span> 예수께서 이르시되 이 사람들로 앉게 하라 하시니 그 곳에 잔디가 많은지라 사람들이 앉으니 수가 오천 명쯤 되더라</div>
+        <div class="verse"><span class="verse-num">11</span> 예수께서 떡을 가져 축사하신 후에 앉아 있는 자들에게 나눠 주시고 물고기도 그렇게 그들의 원대로 주시니라</div>
+        <div class="verse"><span class="verse-num">12</span> 그들이 배부른 후에 예수께서 제자들에게 이르시되 남은 조각을 거두고 버리는 것이 없게 하라 하시므로</div>
+        <div class="verse"><span class="verse-num">13</span> 이에 거두니 보리떡 다섯 개로 먹고 남은 조각이 열두 바구니에 찼더라</div>
+        <div class="verse"><span class="verse-num">14</span> 그 사람들이 예수께서 행하신 이 표적을 보고 말하되 이는 참으로 세상에 오실 그 선지자라 하더라</div>
+        <div class="verse"><span class="verse-num">15</span> 그러므로 예수께서 그들이 와서 자기를 억지로 붙들어 임금으로 삼으려는 줄 아시고 다시 혼자 산으로 떠나 가시니라</div>
+        <div class="verse"><span class="verse-num">16</span> 저물매 제자들이 바다에 내려가서</div>
+        <div class="verse"><span class="verse-num">17</span> 배를 타고 바다를 건너 가버나움으로 가는데 이미 어두웠고 예수는 아직 그들에게 오시지 아니하셨더니</div>
+        <div class="verse"><span class="verse-num">18</span> 큰 바람이 불어 파도가 일어나더라</div>
+        <div class="verse"><span class="verse-num">19</span> 제자들이 노를 저어 십여 리쯤 가다가 예수께서 바다 위로 걸어 배에 가까이 오심을 보고 두려워하거늘</div>
+        <div class="verse"><span class="verse-num">20</span> 이르시되 내니 두려워하지 말라 하신대</div>
+        <div class="verse"><span class="verse-num">21</span> 이에 기뻐서 배로 영접하니 배는 곧 그들이 가려던 땅에 이르렀더라</div>
+        <div class="verse"><span class="verse-num">22</span> 이튿날 바다 건너편에 서 있던 무리가 배 한 척 외에 다른 배가 거기 없는 것과 또 어제 예수께서 제자들과 함께 그 배에 오르지 아니하시고 제자들만 가는 것을 보았더니</div>
+        <div class="verse"><span class="verse-num">23</span> (그러나 디베랴에서 배들이 주께서 축사하신 후 여럿이 떡 먹던 그 곳에 가까이 왔더라)</div>
+        <div class="verse"><span class="verse-num">24</span> 무리가 거기에 예수도 안 계시고 제자들도 없음을 보고 곧 배들을 타고 예수를 찾으러 가버나움으로 가서</div>
+        <div class="verse"><span class="verse-num">25</span> 바다 건너편에서 만나 랍비여 언제 여기 오셨나이까 하니</div>
+        <div class="verse"><span class="verse-num">26</span> 예수께서 대답하여 이르시되 내가 진실로 진실로 너희에게 이르노니 너희가 나를 찾는 것은 표적을 본 까닭이 아니요 떡을 먹고 배부른 까닭이로다</div>
+        <div class="verse"><span class="verse-num">27</span> 썩을 양식을 위하여 일하지 말고 영생하도록 있는 양식을 위하여 하라 이 양식은 인자가 너희에게 주리니 인자는 아버지 하나님께서 인치신 자니라</div>
+        <div class="verse"><span class="verse-num">28</span> 그들이 묻되 우리가 어떻게 하여야 하나님의 일을 하오리이까</div>
+        <div class="verse"><span class="verse-num">29</span> 예수께서 대답하여 이르시되 하나님께서 보내신 이를 믿는 것이 하나님의 일이니라 하시니</div>
+        <div class="verse"><span class="verse-num">30</span> 그들이 묻되 그러면 우리가 보고 당신을 믿도록 행하시는 표적이 무엇이니이까, 하시는 일이 무엇이니이까</div>
+        <div class="verse"><span class="verse-num">31</span> 기록된 바 하늘에서 그들에게 떡을 주어 먹게 하였다 함과 같이 우리 조상들은 광야에서 만나를 먹었나이다</div>
+        <div class="verse"><span class="verse-num">32</span> 예수께서 이르시되 내가 진실로 진실로 너희에게 이르노니 모세가 너희에게 하늘로부터 떡을 준 것이 아니라 내 아버지께서 너희에게 하늘로부터 참 떡을 주시나니</div>
+        <div class="verse"><span class="verse-num">33</span> 하나님의 떡은 하늘에서 내려 세상에 생명을 주는 것이니라</div>
+        <div class="verse"><span class="verse-num">34</span> 그들이 이르되 주여 이 떡을 항상 우리에게 주소서</div>
+        <div class="verse"><span class="verse-num">35</span> 예수께서 이르시되 나는 생명의 떡이니 내게 오는 자는 결코 주리지 아니할 터이요 나를 믿는 자는 영원히 목마르지 아니하리라</div>
+        <div class="verse"><span class="verse-num">36</span> 그러나 내가 너희에게 이르기를 너희는 나를 보고도 믿지 아니하는도다 하였느니라</div>
+        <div class="verse"><span class="verse-num">37</span> 아버지께서 내게 주시는 자는 다 내게로 올 것이요 내게 오는 자는 내가 결코 내쫓지 아니하리라</div>
+        <div class="verse"><span class="verse-num">38</span> 내가 하늘에서 내려온 것은 내 뜻을 행하려 함이 아니요 나를 보내신 이의 뜻을 행하려 함이니라</div>
+        <div class="verse"><span class="verse-num">39</span> 나를 보내신 이의 뜻은 내게 주신 자 중에 내가 하나도 잃어버리지 아니하고 마지막 날에 다시 살리는 이것이니라</div>
+        <div class="verse"><span class="verse-num">40</span> 내 아버지의 뜻은 아들을 보고 믿는 자마다 영생을 얻는 이것이니 마지막 날에 내가 이를 다시 살리리라 하시니라</div>
+        <div class="verse"><span class="verse-num">41</span> 자기가 하늘에서 내려온 떡이라 하시므로 유대인들이 예수에 대하여 수군거려</div>
+        <div class="verse"><span class="verse-num">42</span> 이르되 이는 요셉의 아들 예수가 아니냐 그 부모를 우리가 아는데 자기가 지금 어찌하여 하늘에서 내려왔다 하느냐</div>
+        <div class="verse"><span class="verse-num">43</span> 예수께서 대답하여 이르시되 너희는 서로 수군거리지 말라</div>
+        <div class="verse"><span class="verse-num">44</span> 나를 보내신 아버지께서 이끌지 아니하시면 아무도 내게 올 수 없으니 오는 그를 내가 마지막 날에 다시 살리리라</div>
+        <div class="verse"><span class="verse-num">45</span> 선지자의 글에 그들이 다 하나님의 가르치심을 받으리라 기록되었은즉 아버지께 듣고 배운 사람마다 내게로 오느니라</div>
+        <div class="verse"><span class="verse-num">46</span> 이는 아버지를 본 자가 있다는 것이 아니니라 오직 하나님에게서 온 자만 아버지를 보았느니라</div>
+        <div class="verse"><span class="verse-num">47</span> 진실로 진실로 너희에게 이르노니 믿는 자는 영생을 가졌나니</div>
+        <div class="verse"><span class="verse-num">48</span> 내가 곧 생명의 떡이니라</div>
+        <div class="verse"><span class="verse-num">49</span> 너희 조상들은 광야에서 만나를 먹었어도 죽었거니와</div>
+        <div class="verse"><span class="verse-num">50</span> 이는 하늘에서 내려오는 떡이니 사람으로 하여금 먹고 죽지 아니하게 하는 것이니라</div>
+        <div class="verse"><span class="verse-num">51</span> 나는 하늘에서 내려온 살아 있는 떡이니 사람이 이 떡을 먹으면 영생하리라 내가 줄 떡은 곧 세상의 생명을 위한 내 살이니라 하시니라</div>
+        <div class="verse"><span class="verse-num">52</span> 그러므로 유대인들이 서로 다투어 이르되 이 사람이 어찌 능히 자기 살을 우리에게 주어 먹게 하겠느냐</div>
+        <div class="verse"><span class="verse-num">53</span> 예수께서 이르시되 내가 진실로 진실로 너희에게 이르노니 인자의 살을 먹지 아니하고 인자의 피를 마시지 아니하면 너희 속에 생명이 없느니라</div>
+        <div class="verse"><span class="verse-num">54</span> 내 살을 먹고 내 피를 마시는 자는 영생을 가졌고 마지막 날에 내가 그를 다시 살리리니</div>
+        <div class="verse"><span class="verse-num">55</span> 내 살은 참된 양식이요 내 피는 참된 음료로다</div>
+        <div class="verse"><span class="verse-num">56</span> 내 살을 먹고 내 피를 마시는 자는 내 안에 거하고 나도 그의 안에 거하나니</div>
+        <div class="verse"><span class="verse-num">57</span> 살아 계신 아버지께서 나를 보내시매 내가 아버지로 말미암아 사는 것 같이 나를 먹는 그 사람도 나로 말미암아 살리라</div>
+        <div class="verse"><span class="verse-num">58</span> 이것은 하늘에서 내려온 떡이니 조상들이 먹고도 죽은 그것과 같지 아니하여 이 떡을 먹는 자는 영원히 살리라</div>
+        <div class="verse"><span class="verse-num">59</span> 이 말씀은 예수께서 가버나움 회당에서 가르치실 때에 하셨느니라</div>
+        <div class="verse"><span class="verse-num">60</span> 제자 중 여럿이 듣고 말하되 이 말씀은 어렵도다 누가 들을 수 있느냐 한대</div>
+        <div class="verse"><span class="verse-num">61</span> 예수께서 스스로 제자들이 이 말씀에 대하여 수군거리는 줄 아시고 이르시되 이 말이 너희에게 걸림이 되느냐</div>
+        <div class="verse"><span class="verse-num">62</span> 그러면 너희는 인자가 이전에 있던 곳으로 올라가는 것을 본다면 어떻게 하겠느냐</div>
+        <div class="verse"><span class="verse-num">63</span> 살리는 것은 영이니 육은 무익하니라 내가 너희에게 이른 말은 영이요 생명이라</div>
+        <div class="verse"><span class="verse-num">64</span> 그러나 너희 중에 믿지 아니하는 자들이 있느니라 하시니 이는 예수께서 믿지 아니하는 자들이 누구며 자기를 팔 자가 누구인지 처음부터 아심이러라</div>
+        <div class="verse"><span class="verse-num">65</span> 또 이르시되 그러므로 전에 너희에게 말하기를 내 아버지께서 오게 하여 주지 아니하시면 누구든지 내게 올 수 없다 하였노라 하시니라</div>
+        <div class="verse"><span class="verse-num">66</span> 그 때부터 그의 제자 중에서 많은 사람이 떠나가고 다시 그와 함께 다니지 아니하더라</div>
+        <div class="verse"><span class="verse-num">67</span> 예수께서 열두 제자에게 이르시되 너희도 가려느냐</div>
+        <div class="verse"><span class="verse-num">68</span> 시몬 베드로가 대답하되 주여 영생의 말씀이 주께 있사오니 우리가 누구에게로 가오리이까</div>
+        <div class="verse"><span class="verse-num">69</span> 우리가 주는 하나님의 거룩하신 자이신 줄 믿고 알았사옵나이다</div>
+        <div class="verse"><span class="verse-num">70</span> 예수께서 대답하시되 내가 너희 열둘을 택하지 아니하였느냐 그러나 너희 중의 한 사람은 마귀니라 하시니</div>
+        <div class="verse"><span class="verse-num">71</span> 이 말씀은 가룟 시몬의 아들 유다를 가리키심이라 그는 열둘 중의 하나로 예수를 팔 자러라</div>
+        
+        <p class="amen-text">
+            이 말씀은 살아계신 하나님의 말씀입니다. 아멘
+        </p>
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- 6. 주기도문 -->
+    <!-- ============================================== -->
+    <div class="confession-box lords-prayer-box">
+        <div class="confession-title">주기도문</div>
+        하늘에 계신 우리 아버지,<br>
+        아버지의 이름을 거룩하게 하시며 아버지의 나라가 오게 하시며,<br>
+        아버지의 뜻이 하늘에서와 같이 땅에서도 이루어지게 하소서.<br>
+        오늘 우리에게 일용할 양식을 주시고,<br>
+        우리가 우리에게 잘못한 사람을 용서하여 준 것같이 우리 죄를 용서하여 주시고,<br>
+        우리를 시험에 빠지지 않게 하시고 악에서 구하소서.<br>
+        나라와 권능과 영광이 영원히 아버지의 것입니다. 아멘.
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- 7. 마무리 문구 및 푸터 -->
+    <!-- ============================================== -->
+    <div class="closing-words">
+        모든 성경은 유익합니다.<br>
+        모든 성경을 모든 가정에서<br>
+        성경 스토리로 듣게 되면 성경은 쉽고 재미있는 책이 될 것입니다.<br>
+        <span class="closing-highlight">성경 한 권이면 충분합니다.</span>
+    </div>
+
+    <div class="footer">
+        &copy; 성경통독. 푸른동산 지산교회 정재학 목사
+    </div>
+
+</div>
+
+</body>
+</html>
