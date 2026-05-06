@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예배순서와 회순 샘플</title>
+    <!-- 웹 폰트 적용 (나눔고딕) -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 기본 설정 */
+        body {
+            font-family: 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+            font-size: 20px; 
+            line-height: 1.9; 
+            color: #222222;
+            background-color: #f0f2f5; 
+            margin: 0;
+            padding: 20px 10px;
+        }
+        
+        /* 문서 전체를 감싸는 흰색 박스 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        /* --- 1. 상단 타이틀 섹션 --- */
+        .header-section {
+            text-align: center;
+            background-color: #1a365d;
+            color: #ffffff;
+            padding: 35px 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(26, 54, 93, 0.2);
+        }
+        .header-section h1 {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 0 15px 0;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 15px;
+        }
+        .header-section .sub-title {
+            font-size: 22px;
+            color: #90cdf4;
+            font-weight: 700;
+            margin: 8px 0;
+        }
+
+        /* --- 공통 박스 디자인 (사도신경, 주기도문) --- */
+        .confession-box {
+            background-color: #fef8ec;
+            border: 2px solid #f6e0b5;
+            border-left: 8px solid #d69e2e;
+            padding: 20px 15px;
+            margin: 25px 0;
+            border-radius: 10px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.9;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .confession-title {
+            font-weight: 800;
+            color: #975a16;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        
+        .lords-prayer-box {
+            background-color: #ebf8ff;
+            border: 2px solid #bee3f8;
+            border-left: 8px solid #3182ce;
+        }
+        .lords-prayer-box .confession-title {
+            color: #2b6cb0;
+        }
+
+        /* --- 찬송가 및 이미지 공통 섹션 --- */
+        .hymn-section, .meet-section {
+            text-align: center;
+            margin: 50px 0;
+            background-color: #f7fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        .hymn-title, .meet-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .hymn-image, .meet-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: block;
+            margin: 0 auto 25px auto; /* 여러 장의 이미지가 붙지 않도록 아래 여백 25px 추가 */
+        }
+        .meet-image:last-child {
+            margin-bottom: 0; /* 마지막 이미지는 여백 제거 */
+        }
+
+        .points-main-title {
+            color: #166534;
+            font-size: 26px;
+            font-weight: 800;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed #86efac;
+            padding-bottom: 15px;
+        }
+
+        /* --- 각 순서별 박스 기본 뼈대 --- */
+        .bible-section, .meeting-section {
+            margin-top: 30px;
+        }
+        .chapter-title {
+            font-size: 26px;
+            font-weight: 800;
+            margin: 20px 0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left-width: 6px;
+            border-left-style: solid;
+        }
+
+        /* 🎨 항목별 맞춤 색상 테마 적용 (총 12가지) 🎨 */
+        /* 예배 순서 */
+        .theme-pray { background-color: #faf5ff; color: #6b46c1; border-left-color: #6b46c1; } /* 보라색 */
+        .theme-bible { background-color: #f0fdf4; color: #047857; border-left-color: #047857; } /* 초록색 */
+        .theme-sermon { background-color: #fff5f5; color: #c53030; border-left-color: #c53030; } /* 붉은색 */
+        .theme-notice { background-color: #f0fdfa; color: #0f766e; border-left-color: #0f766e; } /* 짙은 청록색 */
+        .theme-blessing { background-color: #fffbeb; color: #b45309; border-left-color: #b45309; } /* 황금색 */
+
+        /* 회의 순서 (세분화됨) */
+        .theme-member { background-color: #f8fafc; color: #475569; border-left-color: #475569; } /* 회색 */
+        .theme-open { background-color: #eef2ff; color: #4338ca; border-left-color: #4338ca; } /* 남색(인디고) */
+        .theme-order { background-color: #fdf4ff; color: #a21caf; border-left-color: #a21caf; } /* 자주/보라색 */
+        .theme-report { background-color: #eff6ff; color: #2563eb; border-left-color: #2563eb; } /* 파란색 */
+        .theme-rules { background-color: #ecfeff; color: #0891b2; border-left-color: #0891b2; } /* 시안색 */
+        .theme-election { background-color: #f0f9ff; color: #0284c7; border-left-color: #0284c7; } /* 하늘색 */
+        .theme-plan { background-color: #ecfdf5; color: #16a34a; border-left-color: #16a34a; } /* 에메랄드/초록색 */
+        .theme-etc { background-color: #fff7ed; color: #d97706; border-left-color: #d97706; } /* 주황색 */
+        .theme-close { background-color: #fff1f2; color: #be123c; border-left-color: #be123c; } /* 장미/빨간색 */
+        .theme-photo { background-color: #fdf2f8; color: #be185d; border-left-color: #be185d; } /* 핑크색 */
+
+
+        /* 푸터 */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            color: #718096;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* 모바일 화면 맞춤 설정 */
+        @media (max-width: 600px) {
+            .container { padding: 20px 15px; }
+            .header-section h1 { font-size: 24px; }
+            .header-section .sub-title { font-size: 18px; }
+            .points-main-title { font-size: 22px; }
+            .chapter-title { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. 상단 타이틀 -->
+    <div class="header-section">
+        <h1>제20회 일본선교회정기총회</h1>
+        <p class="sub-title">2026년 5월 14일(목) 오전 11시 총회본부 3층 대예배실</p>
+    </div>
+
+    <h2 class="points-main-title">제1부 예배 - 집례 안희성 부이사장</h2>
+
+    <!-- 사도신경 -->
+    <div class="confession-box">
+        <div class="confession-title">사도신경</div>
+        나는 전능하신 아버지 하나님, 천지의 창조주를 믿습니다.<br>
+        나는 그의 유일하신 아들, 우리 주 예수 그리스도를 믿습니다.<br>
+        그는 성령으로 잉태되어 동정녀 마리아에게서 나시고,<br>
+        본디오 빌라도에게 고난을 받아 십자가에 못 박혀 죽으시고,<br>
+        장사된 지 사흘만에 죽은 자 가운데서 다시 살아나셨으며,<br>
+        하늘에 오르시어 전능하신 아버지 하나님 우편에 앉아 계시다가,<br>
+        거기로 부터 살아있는 자와 죽은 자를 심판하러 오십니다.<br>
+        나는 성령을 믿으며, 거룩한 공교회와 성도의 교제와<br>
+        죄를 용서 받는 것과 몸의 부활과 영생을 믿습니다. 아멘.
+    </div>
+
+    <!-- 찬송가 이미지 -->
+    <div class="hymn-section">
+        <div class="hymn-title">찬송가 595장</div>
+        <img src="https://lh3.googleusercontent.com/d/1y7iJ-0tHB8aY_BsyiYDBgCwhu35TDSi7" alt="찬송가 595장 악보" class="hymn-image">
+    </div>
+
+    <!-- 기도 (보라색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-pray">기도 - 신일수 부이사장</div>
+    </div> 
+
+    <!-- 성경봉독 (초록색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-bible">성경봉독 - 집례자<br>
+        이사야 60장 1절<br>
+        일어나라 빛을 발하라. 이는 네 빛이 이르렀고 여호와의 영광이 네 위에 임하였음이니라</div>
+    </div> 
+    
+    <!-- 설교말씀 (붉은색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-sermon">말씀<br> 새로운 세상, 복음의 빛을 비추자! - 정재학 이사장</div>
+    </div> 
+                  
+    <!-- 광고 (청록색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-notice">광고<br> 이성일 총무이사</div>
+    </div> 
+
+    <!-- 축도 (황금색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-blessing">축도<br> 고석현 직전이사장</div>
+    </div> 
+
+    <!-- ============================================== -->
+    <!-- 회의 순서 -->
+    <!-- ============================================== -->
+
+    <h2 class="points-main-title">제2부 정기총회 - 의장 정재학 이사장</h2>
+    
+    <!-- 회원점검 (회색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-member">회원점검 - 서기</div>
+    </div> 
+
+    <!-- 개회선언 (남색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-open">개회선언</div>
+    </div> 
+
+    <!-- 회순통과 (자주/보라색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-order">회순통과</div>
+    </div> 
+
+    <!-- 보고사항 (파란색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-report">보고사항 -<br>
+        행정보고 - 인사, 회의, 행사 보고<br>
+        감사보고<br>
+        재정보고 - 결산보고, 이사비 납부현황</div>
+    </div> 
+
+    <!-- 정관개정 (시안색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-rules">정관개정</div>
+    </div> 
+
+    <!-- 임원선출 (하늘색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-election">임원선출<br>
+        신구임원교체<br>
+        신임이사장 인사<br>
+        감사패 전달</div>
+    </div> 
+
+    <!-- 사업계획 및 예산안 (초록색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-plan">사업계획 및 예산안</div>
+    </div> 
+
+    <!-- 기타토의 (주황색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-etc">기타토의</div>
+    </div> 
+
+    <!-- 폐회 (장미/빨간색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-close">폐회</div>
+    </div> 
+
+    <!-- 광고 및 기념 사진 촬영 (핑크색) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-photo">광고 및 기념 사진 촬영</div>
+    </div> 
+
+    <!-- 첨부 이미지 -->
+    <div class="meet-section">
+        <div class="meet-title">첨부자료</div>
+        <img src="https://lh3.googleusercontent.com/d/1Ohowx8uJN4wdMwgTvab7XoA4W2CrNIG4" alt="인사보고1" class="meet-image">
+        <img src="https://lh3.googleusercontent.com/d/18xl8pHat-ELoXBPgBImdqc6K38Od6acU" alt="인사보고2" class="meet-image">
+        <img src="https://lh3.googleusercontent.com/d/1MOqyot_CRx9-HBhlqDqLhMyN_LrSRAep" alt="행사보고" class="meet-image"> 
+    </div>
+
+    <div class="footer">
+        &copy; 기독교대한성결교회 제19회기 일본선교회
+    </div>
+
+</div>
+
+</body>
+</html>
