@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동행 동역 예배순서와 회순</title>
+    <!-- 웹 폰트 적용 (나눔고딕) -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 기본 설정 */
+        body {
+            font-family: 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+            font-size: 20px; 
+            line-height: 1.9; 
+            color: #222222;
+            background-color: #f0f2f5; 
+            margin: 0;
+            padding: 20px 10px;
+        }
+        
+        /* 문서 전체를 감싸는 흰색 박스 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        /* --- 1. 상단 타이틀 섹션 --- */
+        .header-section {
+            text-align: center;
+            background-color: #1a365d;
+            color: #ffffff;
+            padding: 35px 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(26, 54, 93, 0.2);
+        }
+        .header-section h1 {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 0 15px 0;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 15px;
+        }
+        .header-section .sub-title {
+            font-size: 22px;
+            color: #90cdf4;
+            font-weight: 700;
+            margin: 8px 0;
+        }
+
+        /* --- 공통 박스 디자인 (사도신경, 주기도문) --- */
+        .confession-box {
+            background-color: #fef8ec;
+            border: 2px solid #f6e0b5;
+            border-left: 8px solid #d69e2e;
+            padding: 20px 15px;
+            margin: 25px 0;
+            border-radius: 10px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.9;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .confession-title {
+            font-weight: 800;
+            color: #975a16;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        
+        .lords-prayer-box {
+            background-color: #ebf8ff;
+            border: 2px solid #bee3f8;
+            border-left: 8px solid #3182ce;
+        }
+        .lords-prayer-box .confession-title {
+            color: #2b6cb0;
+        }
+
+        /* --- 찬송가 및 이미지 공통 섹션 --- */
+        .hymn-section, .meet-section {
+            text-align: center;
+            margin: 50px 0;
+            background-color: #f7fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        .hymn-title, .meet-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .hymn-image, .meet-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .points-main-title {
+            color: #166534;
+            font-size: 26px;
+            font-weight: 800;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed #86efac;
+            padding-bottom: 15px;
+        }
+
+        /* --- 각 순서별 박스 기본 뼈대 --- */
+        .bible-section, .meeting-section {
+            margin-top: 30px;
+        }
+        .chapter-title {
+            font-size: 26px;
+            font-weight: 800;
+            margin: 20px 0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left-width: 6px;
+            border-left-style: solid;
+        }
+
+        /* 🎨 항목별 맞춤 색상 테마 적용 🎨 */
+        /* 기도 - 경건한 보라색 */
+        .theme-pray { background-color: #faf5ff; color: #6b46c1; border-left-color: #6b46c1; }
+        
+        /* 성경봉독 - 생명의 초록색 */
+        .theme-bible { background-color: #f0fdf4; color: #047857; border-left-color: #047857; }
+        
+        /* 말씀 - 강조 붉은색 */
+        .theme-sermon { background-color: #fff5f5; color: #c53030; border-left-color: #c53030; }
+        
+        /* 회원점검 - 차분한 회색 */
+        .theme-member { background-color: #f8fafc; color: #475569; border-left-color: #475569; }
+        
+        /* 보고사항 - 신뢰의 파란색 */
+        .theme-report { background-color: #eff6ff; color: #2563eb; border-left-color: #2563eb; }
+        
+        /* 안건 - 청록색 */
+        .theme-agenda { background-color: #f0fdfa; color: #0d9488; border-left-color: #0d9488; }
+        
+        /* 기타토의 - 주황색 */
+        .theme-etc { background-color: #fffbeb; color: #d97706; border-left-color: #d97706; }
+
+
+        /* 푸터 */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            color: #718096;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* 모바일 화면 맞춤 설정 */
+        @media (max-width: 600px) {
+            .container { padding: 20px 15px; }
+            .header-section h1 { font-size: 24px; }
+            .header-section .sub-title { font-size: 18px; }
+            .points-main-title { font-size: 22px; }
+            .chapter-title { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. 상단 타이틀 -->
+    <div class="header-section">
+        <h1>제113 - 14차 동행 & 동역</h1>
+        <p class="sub-title">2026년 6월 1일(월) 오전 11시~ 2일(화) 충무교회, 청평</p>
+    </div>
+
+    <h2 class="points-main-title">제1부 예배 - 인도 정재학 목사</h2>
+
+    <!-- 사도신경 -->
+    <div class="confession-box">
+        <div class="confession-title">사도신경</div>
+        나는 전능하신 아버지 하나님, 천지의 창조주를 믿습니다.<br>
+        나는 그의 유일하신 아들, 우리 주 예수 그리스도를 믿습니다.<br>
+        그는 성령으로 잉태되어 동정녀 마리아에게서 나시고,<br>
+        본디오 빌라도에게 고난을 받아 십자가에 못 박혀 죽으시고,<br>
+        장사된 지 사흘만에 죽은 자 가운데서 다시 살아나셨으며,<br>
+        하늘에 오르시어 전능하신 아버지 하나님 우편에 앉아 계시다가,<br>
+        거기로 부터 살아있는 자와 죽은 자를 심판하러 오십니다.<br>
+        나는 성령을 믿으며, 거룩한 공교회와 성도의 교제와<br>
+        죄를 용서 받는 것과 몸의 부활과 영생을 믿습니다. 아멘.
+    </div>
+
+    <!-- 찬송가 이미지 -->
+    <div class="hymn-section">
+        <div class="hymn-title">찬송가 430장</div>
+        <img src="https://lh3.googleusercontent.com/d/1IQthV-g9UUWYakAkHb5-PK3tcu0z5OLg" alt="찬송가 430장 악보" class="hymn-image">
+    </div>
+
+    <!-- 기도 (보라색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-pray">기도 - 정해승 목사</div>
+    </div> 
+
+    <!-- 성경봉독 (초록색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-bible">성경봉독 - 인도자<br>
+        빌립보서 1장 3~5절<br>
+        내가 너희를 생각할 때마다 나의 하나님께 감사하며<br> 간구할 때마다 너희 무리를 위하여 기쁨으로 항상 간구함은<br> 너희가 첫날부터 이제까지 복음을 위한 일에 참여하고 있기 때문이라.</div>
+    </div> 
+    
+    <!-- 설교말씀 (붉은색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-sermon">말씀<br> 첫 날부터 이제까지, 아름다운 동행 - 이만진 목사</div>
+    </div> 
+
+    <!-- 환영사 (보라색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-pray">환영사 - 성창용 목사</div>
+    </div> 
+
+    <!-- 광고 (초록색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-bible">광고 - 인도자</div>
+    </div>
+
+<!-- 축도 (붉은색 테마 적용) -->
+    <div class="bible-section">
+        <div class="chapter-title theme-sermon">축도<br> 이만진 목사</div>
+    </div> 
+
+
+    <!-- ============================================== -->
+    <!-- 회의 순서 -->
+    <!-- ============================================== -->
+
+    <h2 class="points-main-title">제2부 식사 및 교제 </h2>
+    
+    <!-- 회원점검 (회색 테마 적용) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-member">회원점검<br>박영빈 원인애 부부, 이만진 윤진영 부부, 성창용 이우경 부부, 정해승 최인애 부부, 정재학 신훈희 부부, 
+김노근 배영두 부부, 김인태 한예숙 부부, 남봉우 김숙자 부부, 박광식 황미경 부부 박상길 한지숙 부부, 서종선 차형임 부부, 이기철 최미나 부부, 임영관 최경희 부부, 전성환 송이분 부부, 차승환 김미영 부부, 채수호 홍지선 부부, 최성상 주찬양 부부, 최일웅 오외선 부부</div>
+    </div> 
+    
+    <!-- 보고사항 (파란색 테마 적용) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-report">프로그램 <br>
+        식사 - 고메고메<br>
+        청평으로 이동(카페와 간단한 저녁식사) <br>
+        숙소 호텔 컬리넌 대치(테헤란로 78길 14-16)<br>
+        조식 하동관<br> 일정 변경될 수 있습니다.</div>
+    </div> 
+    
+    <!-- 광고 (청록색 테마 적용) -->
+    <div class="meeting-section">
+        <div class="chapter-title theme-agenda">광고<br>
+        1. 환영합니다.<br> 2. 충무교회 성창용 목사님과 당회와 성도님들께 감사드립니다.<br> 3. 프로그램을 참조하시고 숙소는 서울입니다.<br>
+        4. 박영빈 목사 원로추대식 예정</div>
+    </div> 
+    
+    <!-- 첨부 이미지 -->
+    <div class="meet-section">
+        <div class="meet-title">첨부자료</div>
+        <img src="https://lh3.googleusercontent.com/d/1nUnAaKNSP3Cw7WiTd6jIhZDJL0PIAip2" alt="113차 동행 & 동역 현황 보고" class="meet-image">
+    </div>
+
+    <div class="footer">
+        &copy; 제113년차 동행 & 동역
+    </div>
+
+</div>
+
+</body>
+</html>
